@@ -1,0 +1,69 @@
+---
+import {
+  Copyright,
+  Facebook,
+  Instagram,
+  LinkedIn,
+  X,
+} from "@/components/icons";
+---
+
+<footer class="bg-secondary/50 border-t py-8">
+  <div class="~px-4/8 lg:px-[8vw]">
+    <div
+      class="flex flex-col items-center justify-between gap-12 py-6 md:flex-row"
+    >
+      <section class="flex flex-col">
+        <address
+          class="text-gray-400 text-sm flex flex-col text-center md:text-left"
+        >
+          <span class="text-lg font-semibold" style="font-style: normal"
+            >Green Lion Innovations</span
+          >
+          <span>1280 Kalamath St.</span>
+          <span>Denver, CO 80204</span>
+          <span>United States</span>
+        </address>
+      </section>
+
+      <section
+        class="flex gap-4 [&>a]:text-gray-400 hover:[&>a]:text-primary [&>a]:transition [&>a>svg]:size-12"
+      >
+        <a
+          href="https://www.instagram.com/greenlionpartners/"
+          target="_blank"
+          title="Instagram"
+        >
+          <Instagram />
+        </a>
+
+        <a
+          href="https://twitter.com/greenlionp"
+          target="_blank"
+          title="X (Twitter)"
+        >
+          <X />
+        </a>
+
+        <a href="#" target="_blank" title="LinkedIn">
+          <LinkedIn />
+        </a>
+
+        <a
+          href="https://www.facebook.com/greenlionpartners/"
+          target="_blank"
+          title="Facebook"
+        >
+          <Facebook />
+        </a>
+      </section>
+    </div>
+
+    <div class="py-8 text-center text-sm text-gray-400">
+      <span class="flex gap-2 items-center justify-center">
+        <Copyright class="size-6 align-middle" />
+        {new Date().getFullYear()} - Green Lion Partners. All rights reserved.
+      </span>
+    </div>
+  </div>
+</footer>

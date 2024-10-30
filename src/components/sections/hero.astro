@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import skyline from "@/assets/images/gli-skyline-bg.jpeg";
+---
+
+<div id="hero" class="flex flex-wrap justify-between h-full overflow-hidden">
+  <aside
+    class="flex w-full flex-col justify-center lg:w-5/12 order-2 lg:order-1 ~px-4/12 pb-8 pt-12 space-y-4 -mt-36 lg:mt-0"
+  >
+    <h3
+      class="2xl:~text-6xl/8xl text-center lg:text-left font-bold bg-secondary pt-6 lg:pt-0 ~px-5/8 lg:px-0 max-w-md mx-auto xl:mx-0"
+    >
+      Trusted, sustainable growth
+    </h3>
+
+    <span
+      class="text-center lg:text-right lg:max-w-md leading-tighter text-gray-500 ~text-2xl/4xl font-normal"
+    >
+      for the cannabis industry
+    </span>
+  </aside>
+
+  <figure
+    id="hero-image"
+    class="flex w-full lg:w-7/12 order-1 lg:order-2 overflow-hidden"
+  >
+    <Image
+      src={skyline}
+      alt="Green Lion Innovations"
+      height="1352"
+      width="1694"
+      id="scroll-effect"
+      class="h-full w-full object-cover relative"
+    />
+  </figure>
+</div>
+
+<style>
+  #hero {
+    opacity: 1;
+    transition: opacity 500ms ease;
+    @starting-style {
+      opacity: 0;
+    }
+
+    & > aside {
+      opacity: 1;
+      transform: translateX(0px);
+      transition:
+        opacity 300ms ease-in 1000ms,
+        transform 500ms ease 1000ms;
+
+      @starting-style {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      & > h3 {
+        @media (--lg-max) {
+          clip-path: polygon(15% 0, 85% 0, 100% 100%, 0% 100%);
+        }
+        @media (--3xl-min) {
+          margin-top: -12rem;
+        }
+      }
+      @media (--3xl-min) {
+        & > h3,
+        & > span {
+          margin-left: calc(100% / 4);
+          max-width: 700px;
+        }
+      }
+    }
+
+    & > figure {
+      opacity: 1;
+      will-change: transform;
+      transform: translateX(0px) translateY(0px);
+      transition:
+        opacity 300ms ease-in 1000ms,
+        transform 500ms ease 1000ms,
+        clip-path 1000ms ease-in-out 1000ms;
+
+      @media (--lg-min) {
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        @starting-style {
+          clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+      @starting-style {
+        opacity: 0;
+        transform: translateX(100px) translateY(0px);
+      }
+    }
+  }
+</style>
+
+<script is:inline>
+  /**
+   * @param {{ (): void; (): void; }} fn
+   * @param {number} wait
+   */
+  function throttle(fn, wait) {
+    let time = Date.now();
+    return function () {
+      if (time + wait - Date.now() < 0) {
+        fn();
+        time = Date.now();
+      }
+    };
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+  }
+
+  function parallax() {
+    let scrolled = window.scrollY;
+    let parallax = document.querySelector("#scroll-effect");
+
+    let coords = scrolled * 0.4 + "px";
+    parallax.style.transform = "translateY(" + coords + ")";
+  }
+
+  if (prefersReducedMotion()) {
+    window.addEventListener("scroll", throttle(parallax, 13));
+  }
+</script>

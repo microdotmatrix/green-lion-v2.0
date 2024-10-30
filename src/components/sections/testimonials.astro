@@ -1,0 +1,58 @@
+<div class="content ~py-12/24">
+  <blockquote class="~px-8/16">
+    <p class="text-base lg:~text-lg/2xl text-balance">
+      GLI has been an amazing partner that has truly raised the bar of what we
+      expect when finding new suppliers, every team member is a pleasure to work
+      with and truly professional. This all stems from the leadership team, and
+      spreads through the entire organization. There is never a question about
+      quality because everything they provide is top tier. By having GLI as a
+      partner, CannaDevices has become a stronger distributor and in turn made
+      us more competitive in the market.
+    </p>
+    <footer class="text-muted-foreground">
+      <cite>Chris Piazza, CannaDevices</cite>
+    </footer>
+  </blockquote>
+</div>
+
+<style>
+  blockquote {
+    max-width: 72ch;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    & > footer {
+      align-self: end;
+      & > cite {
+        font-weight: 600;
+        &::before {
+          content: "—";
+          margin-inline-end: 0.5rem;
+        }
+      }
+    }
+    &::before {
+      content: "“";
+      font-size: 24rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      margin-inline-end: 0.5rem;
+      color: hsl(var(--primary));
+      opacity: 0.15;
+      position: absolute;
+      top: 50%;
+      left: -15%;
+      z-index: -1;
+    }
+    @media (--xl-min) {
+      max-width: 96ch;
+      &::before {
+        top: 35%;
+        left: -8%;
+      }
+    }
+  }
+</style>

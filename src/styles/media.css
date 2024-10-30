@@ -1,0 +1,37 @@
+@custom-media --OSdark (prefers-color-scheme: dark);
+@custom-media --OSlight (prefers-color-scheme: light);
+
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+@custom-media --motionNotOK (prefers-reduced-motion: reduce);
+
+@custom-media --xxs-only (0px <= width < 240px);
+@custom-media --xxs-min (width >= 240px);
+@custom-media --xxs-max (width < 240px);
+
+@custom-media --xs-only (240px <= width < 360px);
+@custom-media --xs-min (width >= 360px);
+@custom-media --xs-max (width < 360px);
+
+@custom-media --sm-only (360px <= width < 480px);
+@custom-media --sm-min (width >= 480px);
+@custom-media --sm-max (width < 480px);
+
+@custom-media --md-only (480px <= width < 768px);
+@custom-media --md-min (width >= 768px);
+@custom-media --md-max (width < 768px);
+
+@custom-media --lg-only (768px <= width < 1024px);
+@custom-media --lg-min (width >= 1024px);
+@custom-media --lg-max (width < 1024px);
+
+@custom-media --xl-only (1024px <= width < 1280px);
+@custom-media --xl-min (width >= 1280px);
+@custom-media --xl-max (width < 1280px);
+
+@custom-media --2xl-only (1280px <= width < 1440px);
+@custom-media --2xl-min (width >= 1440px);
+@custom-media --2xl-max (width < 1440px);
+
+@custom-media --3xl-only (1440px <= width < 1920px);
+@custom-media --3xl-min (width >= 1920px);
+@custom-media --3xl-max (width < 1920px);

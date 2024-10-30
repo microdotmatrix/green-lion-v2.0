@@ -1,0 +1,125 @@
+---
+import arcView from "@/assets/images/affiliates/arcview-group.jpg";
+import cannabisCenter from "@/assets/images/affiliates/cannabis-center.png";
+import dpa from "@/assets/images/affiliates/dpa.png";
+import flowHub from "@/assets/images/affiliates/flowhub.png";
+import gorillaBoost from "@/assets/images/affiliates/gorilla-boost.png";
+import iCan from "@/assets/images/affiliates/ican.png";
+import mpp from "@/assets/images/affiliates/mpp.png";
+import smart from "@/assets/images/affiliates/smart.png";
+import ssdp from "@/assets/images/affiliates/ssdp.jpg";
+import { Image } from "astro:assets";
+---
+
+<div class="content max-w-screen-lg ~py-12/24">
+  <div class="~space-y-8/12 ~pb-12/24">
+    <h4 class="accent-thruline line-end">Partners</h4>
+    <ul id="partners" class="grid grid-cols-2 md:grid-cols-4">
+      <li>
+        <a href="https://www.arcviewgroup.com/" target="_blank">
+          <Image src={arcView} alt="ArcView Group" loading="lazy" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.flowhub.co/" target="_blank">
+          <Image src={flowHub} alt="FlowHub" loading="lazy" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.israel-cannabis.com/" target="_blank">
+          <Image src={iCan} alt="Israel Cannabis" loading="lazy" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gorillaboost.com/" target="_blank">
+          <Image src={gorillaBoost} alt="Gorilla Boost" loading="lazy" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="~space-y-8/12 ~pb-12/24">
+    <h4 class="accent-thruline line-start">Advocacy</h4>
+    <ul id="advocacy" class="grid grid-cols-2 md:grid-cols-5">
+      <li>
+        <a href="https://www.mpp.org/" target="_blank">
+          <Image src={mpp} alt="Marijuana Policy Project" loading="lazy" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.ssdp.org/" target="_blank">
+          <Image
+            src={ssdp}
+            alt="Students for Sensible Drug Policy"
+            loading="lazy"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.drugpolicy.org/" target="_blank">
+          <Image src={dpa} alt="Drug Policy Alliance" loading="lazy" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.cannacenterofexcellence.org/" target="_blank">
+          <Image
+            src={cannabisCenter}
+            alt="Cannabis Center of Excellence"
+            loading="lazy"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.studentmmj.com/" target="_blank">
+          <Image
+            src={smart}
+            alt="Student Marijuana Alliance for Research and Transparency"
+            loading="lazy"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  :where(#partners, #advocacy) {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: fit-content;
+    margin-inline: auto;
+    & > li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      @apply shadow-lg;
+      & > a {
+        display: inline-flex;
+        aspect-ratio: 1;
+        block-size: 100%;
+        inline-size: 100%;
+        max-inline-size: 180px;
+        background: #fff;
+        border: 1px solid hsl(var(--border));
+        transition: border-color 200ms ease;
+        &:is(:hover, :focus) {
+          border-color: hsl(var(--primary) / 0.5);
+          & img {
+            transform: scale(1.1);
+          }
+        }
+        & > img {
+          margin: auto;
+          block-size: 100%;
+          inline-size: 80%;
+          object-fit: contain;
+          object-position: center;
+          transform: scale(1);
+          transition: transform 200ms ease;
+        }
+      }
+    }
+  }
+</style>

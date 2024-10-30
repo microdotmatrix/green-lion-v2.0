@@ -1,0 +1,87 @@
+---
+import cannaDevices from "@/assets/images/companies/cannadevices.png";
+import cookies from "@/assets/images/companies/cookies.png";
+import dipDevices from "@/assets/images/companies/dip-devices.png";
+import huniBadger from "@/assets/images/companies/huni-badger.png";
+import nectarCollector from "@/assets/images/companies/nectar-collector.jpg";
+import ooze from "@/assets/images/companies/ooze.png";
+import { Image } from "astro:assets";
+---
+
+<ul
+  id="companies"
+  class="grid grid-cols-2 md:grid-cols-6 items-center justify-center gap-4 w-fit mx-auto"
+>
+  <li>
+    <a href="https://dipdevices.com" target="_blank">
+      <Image src={dipDevices} alt="dip-devices" loading="lazy" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.cookies.co" target="_blank">
+      <Image src={cookies} alt="cookies" loading="lazy" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.hunibadger.com" target="_blank">
+      <Image src={huniBadger} alt="huni-badger" loading="lazy" />
+    </a>
+  </li>
+  <li>
+    <a href="https://nectarcollector.com" target="_blank">
+      <Image
+        src={nectarCollector}
+        alt="nectar-collector"
+        class="invert"
+        loading="lazy"
+      />
+    </a>
+  </li>
+  <li>
+    <a href="https://oozelife.com" target="_blank">
+      <Image src={ooze} alt="ooze" loading="lazy" />
+    </a>
+  </li>
+  <li>
+    <a href="https://cannadevices.com" target="_blank">
+      <Image src={cannaDevices} alt="CannaDevices" loading="lazy" />
+    </a>
+  </li>
+</ul>
+
+<style>
+  #companies {
+    & > li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      @apply shadow-lg;
+      & > a {
+        display: inline-flex;
+        aspect-ratio: 1;
+        block-size: 100%;
+        inline-size: 100%;
+        max-inline-size: 180px;
+        background: #fff;
+        border: 1px solid hsl(var(--border));
+        transition: border-color 200ms ease;
+        &:is(:hover, :focus) {
+          border-color: hsl(var(--primary) / 0.5);
+          & img {
+            transform: scale(1.1);
+          }
+        }
+        & > img {
+          margin: auto;
+          block-size: 100%;
+          inline-size: 80%;
+          object-fit: contain;
+          object-position: center;
+          transform: scale(1);
+          transition: transform 200ms ease;
+        }
+      }
+    }
+  }
+</style>

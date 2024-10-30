@@ -1,0 +1,24 @@
+---
+import { NAV_LINKS as nav } from "@/lib/config";
+import { cn } from "@/lib/utils";
+import NavLink from "../elements/nav-link.astro";
+
+const { role } = Astro.props;
+---
+
+<nav aria-label={`${role} navigation`} class="m-auto">
+  <ul
+    class={cn(
+      "relative flex items-center gap-6 [font-weight:350] uppercase [&>li]:text-gray-500",
+      role === "mobile" ? "flex-col ~text-2xl/4xl" : "flex-row ~text-base/xl",
+    )}
+  >
+    {
+      nav.map((item) => (
+        <li id={item.title}>
+          <NavLink link={item.link} />
+        </li>
+      ))
+    }
+  </ul>
+</nav>

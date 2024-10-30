@@ -1,0 +1,129 @@
+---
+import littleDipper from "@/assets/images/dip-devices_little-dipper.png";
+import lunar from "@/assets/images/dip-devices_lunar.jpg";
+import rover from "@/assets/images/dip-devices_rover.png";
+import electricBird from "@/assets/images/nectar-collector_electric-bird.jpg";
+import oozePronto from "@/assets/images/ooze-pronto.png";
+import { Image } from "astro:assets";
+import ExternalLink from "../elements/external-link.astro";
+---
+
+<div id="products-grid" class="space-y-2">
+  <ul class="grid grid-cols-3 gap-2">
+    <li>
+      <a href="https://dipdevices.com/products/rover" target="_blank">
+        <figure>
+          <Image src={rover} alt="Dip Devices Rover" />
+          <figcaption>
+            <ExternalLink href="https://dipdevices.com/products/rover"
+              >Rover</ExternalLink
+            >
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a href="https://dipdevices.com/products/lunar-v2" target="_blank">
+        <figure>
+          <Image src={lunar} alt="Dip Devices Lunar" />
+          <figcaption>
+            <ExternalLink href="https://dipdevices.com/products/lunar-v2">
+              Lunar
+            </ExternalLink>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://dipdevices.com/products/little-dipper-dab-straw-vaporizer-v2"
+        target="_blank"
+      >
+        <figure>
+          <Image src={littleDipper} alt="Dip Devices Little Dipper" />
+          <figcaption>
+            <ExternalLink
+              href="https://dipdevices.com/products/little-dipper-dab-straw-vaporizer-v2"
+            >
+              Little Dipper
+            </ExternalLink>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+  </ul>
+  <ul class="grid grid-cols-2 gap-2">
+    <li>
+      <a
+        href="https://www.oozelife.com/collections/pronto/products/ooz-1189-blk-ooze-accessories-pronto-black"
+        target="_blank"
+      >
+        <figure>
+          <Image src={oozePronto} alt="Ooze Pronto" />
+          <figcaption>
+            <ExternalLink
+              href="https://www.oozelife.com/collections/pronto/products/ooz-1189-blk-ooze-accessories-pronto-black"
+            >
+              Pronto
+            </ExternalLink>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://nectarcollector.com/product/nectar-collector-electric-honeybird-pro-kit/"
+        target="_blank"
+      >
+        <figure>
+          <Image src={electricBird} alt="Nectar Collector Electric Bird" />
+          <figcaption>
+            <ExternalLink
+              href="https://nectarcollector.com/product/nectar-collector-electric-honeybird-pro-kit/"
+            >
+              Electric Honeybird
+            </ExternalLink>
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<style>
+  #products-grid {
+    & figure {
+      position: relative;
+      background: hsl(240 4.8% 95.9%);
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 1rem;
+      &:hover {
+        & img {
+          transform: scale(1.1);
+        }
+      }
+      & img {
+        block-size: 100%;
+        inline-size: 100%;
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1);
+        transition: transform 200ms ease;
+      }
+      & > figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        inline-size: 100%;
+        display: flex;
+        align-items: center;
+        background: hsl(240 4.8 95.9% / 0.75);
+        @apply backdrop-blur-md ~px-4/8 ~py-2/4;
+        & > a {
+          @apply ~text-xs/lg text-black;
+        }
+      }
+    }
+  }
+</style>
