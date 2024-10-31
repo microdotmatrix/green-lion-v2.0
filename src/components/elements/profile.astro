@@ -11,9 +11,7 @@ const { name, title, image } = Astro.props;
     <Image
       src={image}
       alt={name}
-      height="123"
-      width="123"
-      class="size-full object-cover"
+      class="aspect-square size-full object-cover"
     />
   </figure>
   <div class="flex-1 ~space-y-1/2 ~px-4/8">

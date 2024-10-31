@@ -3,6 +3,15 @@
 
 import Profile from "@/components/elements/profile.astro";
 import ExternalLink from "../elements/external-link.astro";
+
+import jeffDayton from "@/assets/images/team/jeff-dayton.jpg";
+import jeffTyner from "@/assets/images/team/jeff-tyner.jpg";
+import jeffZucker from "@/assets/images/team/jeff-zucker.jpg";
+import joePrimavera from "@/assets/images/team/joe-primavera.jpg";
+import johnPolinski from "@/assets/images/team/john-polinski.jpg";
+import kaitGrey from "@/assets/images/team/kait-grey.jpg";
+import mattWatson from "@/assets/images/team/matt-watson.jpg";
+import mikeBologna from "@/assets/images/team/mike-bologna.jpg";
 ---
 
 <div class="content py-8 mt-12 max-w-screen-2xl">
@@ -15,11 +24,7 @@ import ExternalLink from "../elements/external-link.astro";
     </h6>
     <ul id="gli-team" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Mike Bologna"
-          title="CEO"
-          image="https://static.wixstatic.com/media/0c8290_6c5c3d5af8564e73bab6fc207fe925ce~mv2_d_2400_3000_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/mike-headshot-2.jpg"
-        >
+        <Profile name="Mike Bologna" title="CEO" image={mikeBologna}>
           <p>
             Mike Bologna is a decisive and personable leader with a
             comprehensive background in managing and consulting for projects in
@@ -47,11 +52,7 @@ import ExternalLink from "../elements/external-link.astro";
         </Profile>
       </li>
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Matt Watson"
-          title="CDO"
-          image="https://static.wixstatic.com/media/0c8290_0f1caa342f84438fbc6978eb52a61108~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0c8290_0f1caa342f84438fbc6978eb52a61108~mv2.jpg"
-        >
+        <Profile name="Matt Watson" title="CDO" image={mattWatson}>
           <p>
             Matt Watson entered into the cannabis industry in early 2000's as a
             Glassblower in the retail market. He opened his first retail
@@ -70,11 +71,7 @@ import ExternalLink from "../elements/external-link.astro";
         </Profile>
       </li>
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Jeff Dayton"
-          title="Partner"
-          image="https://static.wixstatic.com/media/0c8290_837b0347836044a6a319d5898ffa9498~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0c8290_837b0347836044a6a319d5898ffa9498~mv2.jpg"
-        >
+        <Profile name="Jeff Dayton" title="Partner" image={jeffDayton}>
           <p>
             Jeff Dayton built the investor network at <ExternalLink
               href="https://www.arcviewgroup.com/"
@@ -90,18 +87,20 @@ import ExternalLink from "../elements/external-link.astro";
       </li>
       <li class="flex flex-col space-y-4">
         <Profile
-          name="Ashley Smith"
-          title="Operations"
-          image="https://static.wixstatic.com/media/0c8290_e2d9dd446b0f46b49743509d2a574564~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0c8290_e2d9dd446b0f46b49743509d2a574564~mv2.jpg"
+          name="John Polinski"
+          title="Web Developer"
+          image={johnPolinski}
         >
           <p>
-            Based in Houston, TX, Ashley Smith has 8 years of experience in
-            Marketing Management and Coordination. Beginning with artist and
-            gallery promotion, small businesses, and start-ups she later moved
-            on to work in event coordination, photography, graphic design, and
-            sales. In 2022 she moved into the Marketing Coordination role with
-            Dip Devices and Operations position within GLI introducing her to
-            businesses within the cannabis industry.
+            John is a skilled web developer with over 10 years of experience in
+            front end technologies. As lead developer and warehouse manager for
+            <ExternalLink href="https://dipdevices.com"
+              >Dip Devices</ExternalLink
+            >, he used his experience in e-commerce to bring modern solutions to
+            inventory management and logistics, and redeveloped the company's
+            website with a modern, responsive design. John is passionate about
+            learning, bringing innovative ideas to life, and finding new ways to
+            solve problems with the latest technology.
           </p>
         </Profile>
       </li>
@@ -113,11 +112,7 @@ import ExternalLink from "../elements/external-link.astro";
     </h6>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Jeffrey Zucker"
-          title="President"
-          image="https://static.wixstatic.com/media/0c8290_10ba7378e7f24cdf8845fe86574c6086~mv2_d_2400_3000_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/jeff-headshot.jpg"
-        >
+        <Profile name="Jeffrey Zucker" title="President" image={jeffZucker}>
           <p>
             Jeffrey M. Zucker is a serial entrepreneur with experience in a wide
             range of industries including real estate, hospitality,
@@ -155,7 +150,7 @@ import ExternalLink from "../elements/external-link.astro";
         <Profile
           name="Joe Primavera"
           title="Director of Operations"
-          image="https://static.wixstatic.com/media/0c8290_7f46f7d289a646cab176930d7b026869~mv2_d_2400_3000_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/joe-headshot.jpg"
+          image={joePrimavera}
         >
           <p>
             Joe Primavera is a detail-oriented and well-rounded professional
@@ -174,11 +169,7 @@ import ExternalLink from "../elements/external-link.astro";
         </Profile>
       </li>
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Jeff Tyner"
-          title="Director of Media"
-          image="https://static.wixstatic.com/media/0c8290_99d75fd23ae0409a8dfdd300bb356b38~mv2_d_2400_3000_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Tyner-headshot-4.jpg"
-        >
+        <Profile name="Jeff Tyner" title="Director of Media" image={jeffTyner}>
           <p>
             Jeff Tyner is a multimedia professional with a background in areas
             ranging from print, digital, and social media to video and film
@@ -200,11 +191,7 @@ import ExternalLink from "../elements/external-link.astro";
         </Profile>
       </li>
       <li class="flex flex-col space-y-4">
-        <Profile
-          name="Kait Grey"
-          title="Executive Assistant"
-          image="https://static.wixstatic.com/media/0c8290_9ecc421e66e84af09eb6fb2c1214550e~mv2_d_2400_3000_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/kait-headshot.jpg"
-        >
+        <Profile name="Kait Grey" title="Executive Assistant" image={kaitGrey}>
           <p>
             Kait hails from Los Angeles, CA, where she started her career as an
             Executive Assistant within the Film Industry. She later moved into

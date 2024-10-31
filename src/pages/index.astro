@@ -2,7 +2,6 @@
 // Home page
 
 import About from "@/components/sections/about.astro";
-import Affiliates from "@/components/sections/affiliates.astro";
 import Companies from "@/components/sections/companies.astro";
 import Contact from "@/components/sections/contact.astro";
 import Hero from "@/components/sections/hero.astro";
@@ -56,12 +55,9 @@ import Layout from "../layouts/default.astro";
     <Team />
   </section>
   <section
-    id="affiliates"
-    class="bg-gradient-to-b from-transparent to-secondary"
+    id="contact"
+    class="bg-gradient-to-b from-transparent to-secondary ~py-12/24"
   >
-    <Affiliates />
-  </section>
-  <section id="contact">
     <Contact />
   </section>
 </Layout>
