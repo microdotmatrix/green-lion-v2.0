@@ -1,5 +1,8 @@
 ---
+// Current company associates section
+
 import Profile from "@/components/elements/profile.astro";
+import ExternalLink from "../elements/external-link.astro";
 ---
 
 <div class="content py-8 mt-12 max-w-screen-2xl">
@@ -10,7 +13,7 @@ import Profile from "@/components/elements/profile.astro";
     <h6 class="text-primary mb-4 lg:mb-8 accent-thruline line-end">
       Green Lion Innov.
     </h6>
-    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
+    <ul id="gli-team" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
       <li class="flex flex-col space-y-4">
         <Profile
           name="Mike Bologna"
@@ -59,8 +62,10 @@ import Profile from "@/components/elements/profile.astro";
             revolutionary products for the cannabis industry and released his
             first electronic dabbing device in 2015 holding both Chinese and US
             patents. Since then Matt has been the lead product developer for
-            both Dip Devices and Green Lion Innovations, constantly leading the
-            market with his innovation.
+            both <ExternalLink href="https://dipdevices.com"
+              >Dip Devices</ExternalLink
+            > and Green Lion Innovations, constantly leading the market with his
+            innovation.
           </p>
         </Profile>
       </li>
@@ -71,12 +76,15 @@ import Profile from "@/components/elements/profile.astro";
           image="https://static.wixstatic.com/media/0c8290_837b0347836044a6a319d5898ffa9498~mv2.jpg/v1/fill/w_640,h_640,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0c8290_837b0347836044a6a319d5898ffa9498~mv2.jpg"
         >
           <p>
-            Jeff Dayton built the investor network at The Arcview Group and is
-            currently the Vice President of Strategy at TRP Co. He is also a
-            Partner at Dip Devices and Green Lion Innovations. He's been a
-            longtime advocate for drug policy reform and continues to diversify
-            his investments of time and capital across the cannabis,
-            health/wellness, and real estate sectors.
+            Jeff Dayton built the investor network at <ExternalLink
+              href="https://www.arcviewgroup.com/"
+              >The Arcview Group</ExternalLink
+            > and is currently the Vice President of Strategy at TRP Co. He is also
+            a Partner at <ExternalLink href="https://dipdevices.com"
+              >Dip Devices</ExternalLink
+            > and Green Lion Innovations. He's been a longtime advocate for drug
+            policy reform and continues to diversify his investments of time and
+            capital across the cannabis, health/wellness, and real estate sectors.
           </p>
         </Profile>
       </li>
@@ -126,8 +134,13 @@ import Profile from "@/components/elements/profile.astro";
             in hospitality, film production, and design including Big Smits
             Entertainment, which develops web and TV series. A drug policy
             activist, Jeffrey is the Vice Chair of the board of directors of the
-            Marijuana Policy Project (MPP) and in 2021 started a podcast, People
-            are the Answer, where he interviews innovators in social impact.
+            <ExternalLink href="https://www.mpp.org"
+              >Marijuana Policy Project (MPP)</ExternalLink
+            >
+            and in 2021 started a podcast, <ExternalLink
+              href="https://www.peoplearetheanswer.com"
+              >People are the Answer</ExternalLink
+            >, where he interviews innovators in social impact.
           </p>
 
           <p>
@@ -180,7 +193,9 @@ import Profile from "@/components/elements/profile.astro";
             Stingrays of the ECHL and later the Charleston Riverdogs of the
             MiLB. He spent the three years prior to joining GLP covering the
             University of South Carolina's football program as a Multimedia
-            Specialist in the Rivals.com network.
+            Specialist in the <ExternalLink href="https://www.rivals.com"
+              >Rivals.com</ExternalLink
+            > network.
           </p>
         </Profile>
       </li>
@@ -212,3 +227,42 @@ import Profile from "@/components/elements/profile.astro";
     </ul>
   </div>
 </div>
+
+<style>
+  /* 
+   * Animate in team member cards when scrolling, 
+   * when using a browser that supports animation-timeline 
+   * and reduced motion is not preferred. 
+   */
+  @supports (animation-timeline: scroll()) {
+    @media (--motionOK) {
+      #team-list ul {
+        opacity: 1;
+        @media (--lg-min) {
+          animation: fade-in forwards;
+          animation-timeline: scroll();
+          animation-range: entry;
+          animation-range: 0 100px;
+        }
+        & > li {
+          animation: item-in-left forwards;
+          animation-timeline: view();
+          animation-range: 0 33%;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          @media (--lg-min) {
+            animation-range: entry;
+          }
+        }
+        & > li:nth-child(2n) {
+          animation: item-in-right forwards;
+          animation-timeline: view();
+          animation-range: 0 33%;
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          @media (--lg-min) {
+            animation-range: entry;
+          }
+        }
+      }
+    }
+  }
+</style>

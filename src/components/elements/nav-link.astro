@@ -1,5 +1,5 @@
 ---
-const { link } = Astro.props;
+const { link, title } = Astro.props;
 
 const active = Astro.url.pathname;
 ---
@@ -9,9 +9,9 @@ const active = Astro.url.pathname;
   href={`/#${link}`}
   class:list={[
     "hover:text-primary transition duration-300",
-    active.includes(`/#${link}`) ? "text-primary" : null,
+    active.includes(`${link}`) ? "text-primary" : null,
   ]}
   aria-current={active ? "page" : undefined}
 >
-  {link}
+  {title}
 </a>

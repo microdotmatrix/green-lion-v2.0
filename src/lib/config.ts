@@ -8,11 +8,12 @@ export type Site = {
   lightAndDarkMode: boolean;
 };
 
+// Global site metadata
 export const SITE: Site = {
-  website: import.meta.env.SITE_URL, // replace this with your deployed domain
+  website: import.meta.env.SITE_URL,
   author: "John Polinski",
   profile: "https://github.com/microdotmatrix",
-  desc: "Green Lion Partners is a Denver, CO based business strategy firm focused on early stage development in the regulated cannabis industry",
+  desc: "Green Lion Innovations is a Denver, CO based business strategy firm focused on early stage development in the regulated cannabis industry",
   title: "Green Lion Innovations",
   ogImage: "green-lion.jpg",
   lightAndDarkMode: true,
@@ -23,6 +24,7 @@ export type NavLinks = {
   title: string;
 };
 
+// Navigation menu links
 export const NAV_LINKS: NavLinks[] = [
   { link: "about", title: "About" },
   { link: "mission", title: "Mission" },

@@ -1,4 +1,6 @@
 ---
+// Global head element with meta tags, structured data, and scripts
+
 import { formatCanonicalURL } from "@/lib/utils";
 import { SITE } from "@/lib/config";
 import Fonts from "./fonts.astro";
@@ -77,12 +79,14 @@ const structuredData = {
     set:html={JSON.stringify(structuredData)}
   />
 
+  <!-- Check if user has dark mode enabled from a previous visit -->
   <script is:inline>
     if (localStorage.theme === "dark") {
       document.documentElement.setAttribute("data-theme", "dark");
     }
   </script>
 
+  <!-- Polyfill for support of CSS animation-timeline in unsupported browsers -->
   <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
   ></script>
 </head>

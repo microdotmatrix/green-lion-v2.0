@@ -1,10 +1,14 @@
 ---
+// Product showcase section
+
+import { Image } from "astro:assets";
+
 import littleDipper from "@/assets/images/dip-devices_little-dipper.png";
 import lunar from "@/assets/images/dip-devices_lunar.jpg";
 import rover from "@/assets/images/dip-devices_rover.png";
 import electricBird from "@/assets/images/nectar-collector_electric-bird.jpg";
 import oozePronto from "@/assets/images/ooze-pronto.png";
-import { Image } from "astro:assets";
+
 import ExternalLink from "../elements/external-link.astro";
 ---
 
@@ -91,7 +95,7 @@ import ExternalLink from "../elements/external-link.astro";
 </div>
 
 <style>
-  #products-grid {
+  :where(#products-grid) {
     & figure {
       position: relative;
       background: hsl(240 4.8% 95.9%);

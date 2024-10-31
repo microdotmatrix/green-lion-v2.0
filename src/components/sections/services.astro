@@ -1,4 +1,6 @@
 ---
+// List of primary company services section
+
 import {
   Design,
   Innovation,
@@ -8,10 +10,7 @@ import {
 } from "@/components/icons";
 ---
 
-<ul
-  id="services"
-  class="~text-xl/2xl lg:~text-base/3xl text-center flex flex-col gap-4 w-fit mx-auto"
->
+<ul id="services" class="~text-xl/4xl xl:~text-2xl/3xl">
   <li><Design /> <span>Product Design</span></li>
   <li><Innovation /> <span>Product Innovation</span></li>
   <li><Source /> <span>Sourcing</span></li>
@@ -20,9 +19,23 @@ import {
 </ul>
 
 <style>
-  #services > li {
+  :where(#services) {
+    text-align: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1rem;
+    width: fit-content;
+    margin-inline: auto;
+    & > li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      & > span {
+        @apply text-muted-foreground;
+      }
+      & > svg {
+        filter: drop-shadow(0 0 3px hsl(var(--primary) / 0.8));
+      }
+    }
   }
 </style>

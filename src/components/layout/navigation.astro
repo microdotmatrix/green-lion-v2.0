@@ -1,4 +1,6 @@
 ---
+// Global navigation menu
+
 import { NAV_LINKS as nav } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import NavLink from "../elements/nav-link.astro";
@@ -9,14 +11,14 @@ const { role } = Astro.props;
 <nav aria-label={`${role} navigation`} class="m-auto">
   <ul
     class={cn(
-      "relative flex items-center gap-6 [font-weight:350] uppercase [&>li]:text-gray-500",
+      "relative flex items-center gap-6",
       role === "mobile" ? "flex-col ~text-2xl/4xl" : "flex-row ~text-base/xl",
     )}
   >
     {
-      nav.map((item) => (
-        <li id={item.title}>
-          <NavLink link={item.link} />
+      nav.map(({ link, title }) => (
+        <li id={title} class="text-gray-500 uppercase [font-weight:350]">
+          <NavLink link={link} title={title} />
         </li>
       ))
     }

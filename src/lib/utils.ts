@@ -2,12 +2,15 @@ import { withFluid } from "@fluid-tailwind/tailwind-merge";
 import { clsx, type ClassValue } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
+// Utility function to merge Tailwind class names, extended to support fluid-tailwind responsive values
 export const twMerge = extendTailwindMerge(withFluid);
 
+// Utility function to combine class names
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Utility function to format canonical URL
 export function formatCanonicalURL(url: string | URL) {
   const path = url.toString();
   const hasQueryParams = path.includes("?");
@@ -18,21 +21,3 @@ export function formatCanonicalURL(url: string | URL) {
   // otherwise, canonical URL always has a trailing slash
   return path.replace(/\/?$/, hasQueryParams ? "" : "/");
 }
-
-export const isInView = (elem: HTMLElement) => {
-  var bounding = elem.getBoundingClientRect();
-  return (
-    ((bounding.bottom >= 0 &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight)) ||
-      (bounding.top >= 0 &&
-        bounding.top <=
-          (window.innerHeight || document.documentElement.clientHeight))) &&
-    ((bounding.right >= 0 &&
-      bounding.right <=
-        (window.innerWidth || document.documentElement.clientWidth)) ||
-      (bounding.left >= 0 &&
-        bounding.left <=
-          (window.innerWidth || document.documentElement.clientWidth)))
-  );
-};
