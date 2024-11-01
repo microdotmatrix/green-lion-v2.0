@@ -1,0 +1,42 @@
+<button
+  id="scroll-up"
+  class="hidden fixed ~bottom-2/4 ~right-2/4 z-50 p-2 transition-transform duration-300 hover:scale-110 active:scale-90"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="size-12 text-muted-foreground hover:text-primary transition-colors duration-300"
+    width="32"
+    height="32"
+    viewBox="0 0 256 256"
+  >
+    <g fill="currentColor">
+      <path d="M224 128a96 96 0 1 1-96-96a96 96 0 0 1 96 96" opacity=".2"
+      ></path>
+      <path
+        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m45.66-77.66a8 8 0 0 1-11.32 11.32L128 115.31l-34.34 34.35a8 8 0 0 1-11.32-11.32l40-40a8 8 0 0 1 11.32 0Z"
+      ></path>
+    </g>
+  </svg>
+  <span class="sr-only">Back to top</span>
+</button>
+
+<script is:inline>
+  // Scroll to top button
+  const scrollUpButton = document.querySelector("#scroll-up");
+
+  window.addEventListener("scroll", () => {
+    // Show/hide scroll to top button when user scrolls down the page
+    if (window.scrollY > 300) {
+      scrollUpButton.classList.remove("hidden");
+      scrollUpButton.classList.add("block");
+    } else {
+      scrollUpButton.classList.remove("block");
+      scrollUpButton.classList.add("hidden");
+    }
+  });
+
+  // Return to top of page when button is clicked
+  scrollUpButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
