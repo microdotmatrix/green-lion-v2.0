@@ -30,6 +30,5 @@ export const NAV_LINKS: NavLinks[] = [
   { link: "mission", title: "Mission" },
   { link: "products", title: "Products" },
   { link: "team", title: "Team" },
-  { link: "affiliates", title: "Affiliates" },
   { link: "contact", title: "Contact" },
 ];
