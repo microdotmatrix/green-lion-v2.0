@@ -1,7 +1,7 @@
 ---
 // Hero section
 
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import skyline from "@/assets/images/gli-skyline-bg.jpeg";
 ---
 
@@ -26,11 +26,10 @@ import skyline from "@/assets/images/gli-skyline-bg.jpeg";
     id="hero-image"
     class="flex w-full lg:w-7/12 order-1 lg:order-2 overflow-hidden"
   >
-    <Image
+    <Picture
       src={skyline}
       alt="Green Lion Innovations"
-      height="1352"
-      width="1694"
+      formats={["avif", "webp", "jpeg"]}
       id="scroll-effect"
       class="h-full w-full object-cover relative z-0"
     />
