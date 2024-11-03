@@ -1,17 +1,21 @@
 ---
-// Load fonts from fontshare.com API and set global css variables
+// Load fonts from local assets and set global css variables
 ---
 
-<link rel="preconnect" href="https://api.fontshare.com" />
-<link
-  href="https://api.fontshare.com/v2/css?f[]=montserrat@1&f[]=supreme@1&f[]=switzer@1&f[]=bebas-neue@400&display=swap"
-  rel="stylesheet"
-/>
-
 <style is:global>
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Variable.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Supreme";
+    src: url("/fonts/Supreme-Variable.woff2") format("woff2");
+  }
+
   :root {
     --font-sans: "Supreme", sans-serif;
     --font-serif: "Montserrat", sans-serif;
-    --font-mono: "Expose", sans-serif;
+    --font-mono: monospace;
   }
 </style>
