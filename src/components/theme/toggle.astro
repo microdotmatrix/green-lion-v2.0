@@ -75,9 +75,26 @@ import Icon from "./icon.astro";
   ::view-transition-new(root) {
     position: absolute;
     inset: 0;
-    animation-duration: 0.75s;
+    animation-duration: 0.5s;
     animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear(
+      0 0%,
+      0.0085 31.26%,
+      0.0167 40.94%,
+      0.0289 48.86%,
+      0.0471 55.92%,
+      0.0717 61.99%,
+      0.1038 67.32%,
+      0.1443 72.07%,
+      0.1989 76.7%,
+      0.2659 80.89%,
+      0.3465 84.71%,
+      0.4419 88.22%,
+      0.554 91.48%,
+      0.6835 94.51%,
+      0.8316 97.34%,
+      1 100%
+    );
   }
   ::view-transition-old(root) {
     z-index: -1;
