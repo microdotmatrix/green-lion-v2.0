@@ -27,12 +27,9 @@ import Layout from "../layouts/default.astro";
     <Mission />
   </section>
   <section
-    id="testimonials"
-    class="bg-gradient-to-b from-secondary to-transparent"
+    id="products"
+    class="~py-12/24 bg-gradient-to-b from-secondary to-transparent"
   >
-    <Testimonials />
-  </section>
-  <section id="products" class="~py-12/24">
     <div
       class="content max-w-full flex flex-col xl:flex-row ~px-4/8 md:~px-8/24 items-center ~gap-4/8"
     >
@@ -47,9 +44,16 @@ import Layout from "../layouts/default.astro";
         <Products />
       </div>
     </div>
-    <div class="content">
+    <div class="content ~space-y-8/12">
+      <h4 class="accent-thruline line-start">Our Companies</h4>
       <Companies />
     </div>
+  </section>
+  <section
+    id="testimonials"
+    class="bg-gradient-to-t from-secondary to-transparent border-b"
+  >
+    <Testimonials />
   </section>
   <section id="team">
     <Team />
