@@ -13,7 +13,7 @@ export const SITE: Site = {
   website: import.meta.env.SITE_URL,
   author: "John Polinski",
   profile: "https://github.com/microdotmatrix",
-  desc: "Green Lion Innovations is a Denver, CO based business strategy firm focused on early stage development in the regulated cannabis industry",
+  desc: "Green Lion Innovations is a Denver, CO based business strategy firm focused on product development and manufacturing.",
   title: "Green Lion Innovations",
   ogImage: "green-lion.jpg",
   lightAndDarkMode: true,
