@@ -173,7 +173,9 @@ import { ArrowLeft, ArrowRight } from "@/components/icons";
 
     function scrollToSlide(index: number) {
       // Instead of scrollIntoView, we'll manually set scrollLeft
+      // @ts-ignore
       const slideWidth = track.offsetWidth;
+      // @ts-ignore
       track.scrollTo({
         left: slideWidth * index,
         behavior: "smooth",
@@ -192,6 +194,7 @@ import { ArrowLeft, ArrowRight } from "@/components/icons";
 
     // Optional: Update currentIndex when scrolling manually
     track.addEventListener("scroll", () => {
+      // @ts-ignore
       const slideWidth = track.offsetWidth;
       currentIndex = Math.round(track.scrollLeft / slideWidth);
     });
