@@ -1,5 +1,7 @@
 // Export all icons as named exports
 
+export { default as ArrowLeft } from "./arrow-left.astro";
+export { default as ArrowRight } from "./arrow-right.astro";
 export { default as Assembly } from "./assembly.astro";
 export { default as Battery } from "./battery.astro";
 export { default as Copyright } from "./copyright.astro";

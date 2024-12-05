@@ -1,28 +1,146 @@
 ---
 // Testimonials section
+import { ArrowLeft, ArrowRight } from "@/components/icons";
 ---
 
-<div class="content ~py-12/24">
-  <blockquote class="~px-8/16">
-    <p class="text-base lg:~text-lg/2xl text-balance">
-      GLI has been an amazing partner that has truly raised the bar of what we
-      expect when finding new suppliers, every team member is a pleasure to work
-      with and truly professional. This all stems from the leadership team, and
-      spreads through the entire organization. There is never a question about
-      quality because everything they provide is top tier. By having GLI as a
-      partner, CannaDevices has become a stronger distributor and in turn made
-      us more competitive in the market.
-    </p>
-    <footer class="text-muted-foreground">
-      <cite>Chris Piazza, CannaDevices</cite>
-    </footer>
-  </blockquote>
+<div class="testimonials-section ~py-12/24">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <blockquote class="carousel-slide">
+        <p class="text-base lg:~text-lg/2xl text-balance">
+          GLI has been an amazing partner that has truly raised the bar of what
+          we expect when finding new suppliers, every team member is a pleasure
+          to work with and truly professional. This all stems from the
+          leadership team, and spreads through the entire organization. There is
+          never a question about quality because everything they provide is top
+          tier. By having GLI as a partner, CannaDevices has become a stronger
+          distributor and in turn made us more competitive in the market.
+        </p>
+        <footer class="text-muted-foreground">
+          <cite>Chris Piazza, CannaDevices</cite>
+        </footer>
+      </blockquote>
+      <blockquote class="carousel-slide">
+        <p class="text-base lg:~text-lg/2xl text-balance">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos,
+          cumque. Laudantium est tempore quos reprehenderit iure aspernatur sit
+          porro nihil qui vero consequuntur ea eaque sapiente, nesciunt quam!
+          Quas, commodi.
+        </p>
+        <footer class="text-muted-foreground">
+          <cite>Another Satisfied Customer</cite>
+        </footer>
+      </blockquote>
+      <blockquote class="carousel-slide">
+        <p class="text-base lg:~text-lg/2xl text-balance">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          delectus reprehenderit tempora expedita nesciunt! Consequuntur ipsam
+          reprehenderit ex doloremque aut aspernatur corrupti natus, alias, rem
+          et repellat incidunt soluta totam.
+        </p>
+        <footer class="text-muted-foreground">
+          <cite>An Even More Satisfied Customer</cite>
+        </footer>
+      </blockquote>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-button prev" aria-label="Previous slide">
+        <ArrowLeft class="w-6 h-6" />
+      </button>
+      <button class="carousel-button next" aria-label="Next slide">
+        <ArrowRight class="w-6 h-6" />
+      </button>
+    </div>
+  </div>
 </div>
 
 <style>
-  :where(blockquote) {
-    max-width: 72ch;
+  .testimonials-section {
+    position: relative;
+    &::before {
+      content: "“";
+      font-size: 24rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      margin-inline-end: 0.5rem;
+      color: hsl(var(--primary));
+      opacity: 0.15;
+      position: absolute;
+      top: 25%;
+      left: -2%;
+      z-index: -1;
+    }
+    @media (--xl-min) {
+      &::before {
+        top: 35%;
+        left: 10%;
+      }
+    }
+    @media (--3xl-min) {
+      &::before {
+        top: 35%;
+        left: 20%;
+      }
+    }
+  }
+  .carousel-container {
+    position: relative;
+    max-width: 96ch;
     margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    padding-inline: 2rem;
+  }
+
+  .carousel-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-inline: 2rem;
+  }
+
+  .carousel-button {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    transition: background-color 0.2s;
+
+    &:hover {
+      background: hsl(var(--primary) / 0.2);
+    }
+
+    &:active {
+      background: hsl(var(--primary) / 0.3);
+    }
+  }
+
+  :where(blockquote) {
+    max-width: 100%;
+    margin-inline: 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -38,25 +156,47 @@
         }
       }
     }
-    &::before {
-      content: "“";
-      font-size: 24rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      margin-inline-end: 0.5rem;
-      color: hsl(var(--primary));
-      opacity: 0.15;
-      position: absolute;
-      top: 50%;
-      left: -15%;
-      z-index: -1;
-    }
-    @media (--xl-min) {
-      max-width: 96ch;
-      &::before {
-        top: 35%;
-        left: -8%;
-      }
-    }
   }
 </style>
+
+<script>
+  function setupCarousel() {
+    const track = document.querySelector(".carousel-track");
+    if (!track) return;
+
+    const slides = track.querySelectorAll(".carousel-slide");
+    const prevButton = document.querySelector(".carousel-button.prev");
+    const nextButton = document.querySelector(".carousel-button.next");
+    if (!prevButton || !nextButton) return;
+
+    let currentIndex = 0;
+
+    function scrollToSlide(index: number) {
+      // Instead of scrollIntoView, we'll manually set scrollLeft
+      const slideWidth = track.offsetWidth;
+      track.scrollTo({
+        left: slideWidth * index,
+        behavior: "smooth",
+      });
+    }
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = Math.max(0, currentIndex - 1);
+      scrollToSlide(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = Math.min(slides.length - 1, currentIndex + 1);
+      scrollToSlide(currentIndex);
+    });
+
+    // Optional: Update currentIndex when scrolling manually
+    track.addEventListener("scroll", () => {
+      const slideWidth = track.offsetWidth;
+      currentIndex = Math.round(track.scrollLeft / slideWidth);
+    });
+  }
+
+  // Initialize carousel when the DOM is loaded
+  document.addEventListener("DOMContentLoaded", setupCarousel);
+</script>
